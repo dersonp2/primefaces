@@ -22,9 +22,10 @@ public class PessoaBean implements Serializable {
 
     private List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
-    public void adicionar(){
+    public String adicionar(){
         pessoas.add(pessoa);
         limpar();
+        return "";
     }
 
     public void limpar(){
