@@ -10,19 +10,26 @@
 </h:head>
 <h:body>
 
+    <p:messages autoUpdate="true" id="msg"/>
     <p:graphicImage library="imagens" name="logoweb.png" width="400"/>
 
     <h1>Informações de Cadastro</h1>
     <p:panel header="Cadastro de Pessoas">
         <h:form id="frm">
             <h:panelGrid columns="2">
-                <p:outputLabel value="Nome" onfocus="idNome"/>
-                <p:inputText id="idNome" value="#{pessoaBean.pessoa.nome}" size="50"/>
+                <p:outputLabel value="Nome" for="idNome"/>
+                <p:inputText id="idNome"
+                             value="#{pessoaBean.pessoa.nome}"
+                             size="50"
+                required="true"
+                requiredMessage="Campo Obrigatório"
+                placeholder="Insira o nome"
+                title="Insira o nome"/>
 
                 <p:outputLabel value="Email" onfocus="idEmail"/>
                 <p:inputText id="idEmail" value="#{pessoaBean.pessoa.email}" size="50"/>
 
-                <p:commandButton value="Adicionar" action="#{pessoaBean.adicionar}" update="frm tabelaPessoa"/>
+                <p:commandButton value="Adicionar" action="#{pessoaBean.adicionar}"  update="frm tabelaPessoa"/>
             </h:panelGrid>
         </h:form>
     </p:panel>

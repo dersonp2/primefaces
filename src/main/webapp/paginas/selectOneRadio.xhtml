@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Pagina Inicial</title>
+</h:head>
+<h:body>
+    <p:graphicImage library="imagens" name="logoweb.png" width="400"/>
+    <h1>Seleção</h1>
+    <h:form>
+        <p:panelGrid columns="2">
+            <p:outputLabel value="Evento"/>
+            <p:selectOneMenu
+                    value="#{atividadeBean.atividade.tipoAtividade}"
+                    filter="true">
+                <f:selectItems
+                        value="#{atividadeBean.atividades}"
+                        var="a"
+                        itemValue="#{a}"
+                        itemLabel="#{a.descricao}"/>
+            </p:selectOneMenu>
+            <p:commandButton value="Enviar" update="label"/>
+            <p:outputLabel id="label" value="#{atividadeBean.atividade.tipoAtividade.descricao}"/>
+        </p:panelGrid>
+    </h:form>
+</h:body>
+</html>

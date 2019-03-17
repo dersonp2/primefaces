@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Pagina Inicial</title>
+</h:head>
+<h:body>
+    <p:graphicImage library="imagens" name="logoweb.png" width="400"/>
+    <h1>Seleção de Vários times</h1>
+    <h:form>
+        <p:panelGrid columns="2">
+            <p:selectManyCheckbox value="#{timesBean.times}" layout="pageDirection">
+                <f:selectItem itemLabel="Flamengo" itemValue="Flamengo"/>
+                <f:selectItem itemValue="Vasco" itemLabel="Vasco"/>
+                <f:selectItem itemLabel="Fluminense" itemValue="Fluminense"/>
+                <f:selectItem itemValue="Botafogo" itemLabel="Botafogo"/>
+            </p:selectManyCheckbox>
+            <p:commandButton value="Times" action="#{timesBean.selecionar}"/>
+        </p:panelGrid>
+    </h:form>
+</h:body>
+</html>

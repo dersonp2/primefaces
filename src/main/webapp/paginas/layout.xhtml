@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Pagina Inicial</title>
+</h:head>
+<h:body>
+
+
+    <p:layout fullPage="true">
+
+        <p:layoutUnit position="north" header="Topo">
+            <p:graphicImage library="imagens" name="logoweb.png" width="400"/>
+            <h1>Barra de ferramenta e Botões</h1>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="west" header="Menu lateral"
+                      resizable="true" collapsible="true" size="230">
+            <h:form>
+                <p:menu>
+                    <p:menuitem>Cadastro</p:menuitem>
+                    <p:menuitem>Consulta</p:menuitem>
+                    <p:menuitem>Sair</p:menuitem>
+                </p:menu>
+            </h:form>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center" header="Centro">
+            <p:editor></p:editor>
+        </p:layoutUnit>
+    </p:layout>
+</h:body>
+</html>
